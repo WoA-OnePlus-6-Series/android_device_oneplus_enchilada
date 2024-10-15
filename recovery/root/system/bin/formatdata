@@ -1,0 +1,5 @@
+#!/sbin/bash
+ignoreweirdness=true
+. common
+formatdata
+echo "done!"
