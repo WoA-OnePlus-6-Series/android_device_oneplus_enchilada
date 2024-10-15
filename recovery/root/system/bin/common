@@ -3,7 +3,7 @@ win=/dev/block/sda19
 esp=/dev/block/sda17
 removeparts(){ for i in 17 18 19 20; do parted -s /dev/block/sda rm $i 2>/dev/null; done }
 formatwinesp(){
-mkfs.fat -F16 -s1 $esp -n ESPONEPLUS
+mkfs.fat -F32 -s1 $esp -n ESPONEPLUS
 mkfs.ntfs -f $win -L WINONEPLUS
 }
 formatdata(){
