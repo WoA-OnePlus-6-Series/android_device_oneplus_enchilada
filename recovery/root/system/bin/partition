@@ -16,10 +16,10 @@ fi
 winend=$(echo "scale=1;$max-$aa"|bc -l)"GB"
 removeparts
 sgdisk --resize-table 32 /dev/block/sda
-parted -s /dev/block/sda mkpart esp fat32 6559MB 6700MB
 parted -s /dev/block/sda mkpart userdata ext4 6700MB $userdataend"GB"
+parted -s /dev/block/sda mkpart esp fat32 6559MB 6700MB
 parted -s /dev/block/sda mkpart win ntfs $userdataend"GB" $winend
-parted -s /dev/block/sda set 17 esp on
+parted -s /dev/block/sda set 18 esp on
 sync
 formatwindata
 formatwinesp
