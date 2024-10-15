@@ -28,5 +28,10 @@ TARGET_KERNEL_CONFIG := enchilada_defconfig
 # Recovery
 TW_DEVICE_VERSION := Daniel224455
 
+# Allow broken rules & missing dependencies
+ALLOW_MISSING_DEPENDENCIES := true
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 # inherit from the proprietary version
 #-include vendor/oneplus/enchilada/BoardConfigVendor.mk
