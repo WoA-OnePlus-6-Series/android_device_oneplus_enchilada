@@ -34,7 +34,7 @@ fi
 for i in sdcard data; do umount -lf /$i 2> /dev/null; done
 for i in pe esp win cache metadata; do umount -lf /dev/block/by-name/$i 2> /dev/null; done
 if [ "$ignoreweirdness" != true ]; then
-weirdparts=$(find_ /dev/block -regextype posix-extended -type b -regex '.*/sda(3[5-9]|[4-9][0-9])$')
+weirdparts=$(find /dev/block -regextype posix-extended -type b -regex '.*/sda(3[5-9]|[4-9][0-9])$')
 if [ -n "$weirdparts" ]; then
 echo -n "in order to use this script, your partition table has to be restored to the stock variant. ALL DATA WILL BE LOST. continue (y/n)? "
 read yn
